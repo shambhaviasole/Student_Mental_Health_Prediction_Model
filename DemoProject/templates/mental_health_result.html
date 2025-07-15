@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Urbanist', sans-serif;
+      background: radial-gradient(circle at top left, #0f0f0f, #1a1a1a);
+      color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: #1c1c1c;
+      padding: 40px;
+      border-radius: 16px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+      max-width: 480px;
+      width: 90%;
+    }
+
+    h2 {
+      color: #00f7ff;
+      margin-bottom: 20px;
+    }
+
+    .prediction {
+      font-size: 20px;
+      background-color: #2a2a2a;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 5px solid #00f7ff;
+      margin-top: 10px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: #00f7ff;
+      color: #000;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #00d0e0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>🧠 Prediction Result</h2>
+    <div class="prediction">
+      {{ prediction }}
+    </div>
+    <a href="/predict/">🔁 Take Another Assessment</a>
+    <a href="/stdDashboard/">🔁 Dashboard</a>
+    
+  </div>
+
+</body>
+</html>

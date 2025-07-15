@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Failed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #1a0033, #330066, #00bcd4);
+      background-size: 400% 400%;
+      animation: gradientMotion 12s ease infinite;
+      font-family: 'Urbanist', sans-serif;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes gradientMotion {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 45px 35px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(0, 200, 255, 0.2);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      max-width: 420px;
+      width: 90%;
+      transition: all 0.3s ease;
+    }
+
+    .container:hover {
+      box-shadow: 0 0 40px rgba(0, 200, 255, 0.35);
+    }
+
+    h2 {
+      color: #00eaff;
+      font-size: 2rem;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #dddddd;
+      margin-bottom: 30px;
+    }
+
+    a {
+      text-decoration: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      background: linear-gradient(to right, #00eaff, #66ffcc);
+      color: #000;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 234, 255, 0.3);
+    }
+
+    a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 234, 255, 0.45);
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 35px 20px;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Login Failed</h2>
+    <p>Oops! Your email or password is incorrect.<br>Please try again.</p>
+    <a href="/login/">🔁 Back to Login</a>
+  </div>
+
+</body>
+</html>

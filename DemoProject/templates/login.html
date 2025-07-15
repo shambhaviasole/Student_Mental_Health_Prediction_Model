@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(to right, #2e0249, #570a57);
+      color: #ffffff;
+      font-family: 'Lexend', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .login-box {
+      background-color: #1a1a1d;
+      padding: 45px 35px;
+      border-radius: 14px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .login-box:hover {
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+      transform: scale(1.01);
+    }
+
+    h2 {
+      font-weight: 600;
+      color: #00f0ff;
+    }
+
+    .form-label {
+      color: #ddd;
+    }
+
+    .form-control {
+      background-color: #222;
+      border: 1px solid #444;
+      color: #fff;
+      transition: border-color 0.3s;
+    }
+
+    .form-control:focus {
+      border-color: #00f0ff;
+      box-shadow: 0 0 5px #00f0ff88;
+      background-color: #1a1a1a;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #00f0ff, #00ffa3);
+      border: none;
+      padding: 12px;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+    }
+
+    .alert {
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    a.text-primary {
+      color: #00f0ff !important;
+      text-decoration: none;
+    }
+
+    a.text-primary:hover {
+      text-decoration: underline;
+    }
+
+    .text-center p {
+      font-size: 0.95rem;
+      color: #bbb;
+    }
+
+    @keyframes fadeIn {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h2 class="text-center mb-4">🔐 Student Login</h2>
+
+    {% if message %}
+      <div class="alert alert-danger text-center">{{ message }}</div>
+    {% endif %}
+    {% if error %}
+      <div class="alert alert-danger text-center">{{ error }}</div>
+    {% endif %}
+
+    <form method="post" action="/login/">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="emailID" class="form-label">Email ID</label>
+        <input type="email" class="form-control" id="emailID" name="emailID" placeholder="Enter your email" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+
+    <p class="mt-3 text-center">
+      Don’t have an account?
+      <a href="/registration/" class="text-primary fw-semibold">Register</a>
+    </p>
+  </div>
+
+</body>
+</html>
